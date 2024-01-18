@@ -53,17 +53,7 @@ print(vowels(input("type word: ")))
 
 def capitalize_sentence():
     sentence = input("input a sentence ")
-    output = ""
-    capitalize = True
-    for i in sentence:
-        if capitalize:
-            output += i.capitalize()
-            capitalize = False
-        else: output += i
-        
-        if i == " ":
-            capitalize = True
-    print(output)
+    print(sentence.title())
 
         
 
