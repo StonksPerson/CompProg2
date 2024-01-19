@@ -59,6 +59,9 @@ def recipt(order):
     print("---------")
     print(f"total: ${total}")
 
+for i in range(50):
+    print()
+
 order.append(ask(entrees, "entree"))
 order.append(ask(drinks, "drink"))
 order.append(ask(dessert, "dessert"))
