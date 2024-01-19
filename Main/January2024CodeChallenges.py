@@ -51,13 +51,10 @@ def vowels(tmp_word):
     return vowels
 print(vowels(input("type word: ")))
 
-def capitalize_sentence():
-    sentence = input("input a sentence ")
+def capitalize_sentence(sentence):
     print(sentence.title())
 
-        
-
-capitalize_sentence()
+capitalize_sentence("this is placeholder text hooray")
 
 def find_biggest(array):
     biggest = 0
