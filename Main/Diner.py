@@ -41,14 +41,17 @@ def ask(items, name):
                 isValid = True
                 return i
                 break
+        print("Invalid")
 
 def recipt(order):
     total = 0
     isValid = False
     while not isValid:
-        tip = int(input("How much do you want to tip? "))
-        if tip:
+        tip = input("How much do you want to tip? ")
+        if tip.isnumeric():
+            tip = int(tip)
             isValid = True
+        else: print("Invalid")
 
     for i in order:
         total += i['price']
