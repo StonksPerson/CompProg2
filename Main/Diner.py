@@ -1,5 +1,19 @@
 import math as math
 
+people = ""
+peopleNames = []
+idx = 0
+isValid = False
+while not isValid:
+    people = input("How many people in your party? ")
+    if people.isnumeric():
+        people = int(people)
+        break
+    print("Invalid")
+
+for i in range(people):
+    peopleNames.append(input(f"What is your name ({i + 1})? "))
+
 order = []
 answer = []
 
@@ -35,7 +49,7 @@ def ask(items, name):
     print(menu)
 
     while not isValid:
-        answer = input(f"What do you want for your {name}? ")
+        answer = input(f"What do you want for your {name}, {peopleNames[idx]}? ")
         for i in items:
             if i["name"] == answer:
                 isValid = True
@@ -65,8 +79,14 @@ def recipt(order):
 for i in range(50):
     print()
 
-order.append(ask(entrees, "entree"))
-order.append(ask(drinks, "drink"))
-order.append(ask(dessert, "dessert"))
+for i in range(people):
+
+    order.append(ask(entrees, "entree"))
+    order.append(ask(drinks, "drink"))
+    order.append(ask(dessert, "dessert"))
+    idx += 1
+
+for i in range(50):
+    print()
 
 recipt(order)
